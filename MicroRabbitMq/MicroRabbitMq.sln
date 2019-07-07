@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{77CF6CA8-00A2-4F23-BB34-38B59C7EC404}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure.Bus", "Infraestructure.Bus", "{9FC0D8BF-288D-4409-86CB-AB37C41DD5FA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bus", "Bus", "{9FC0D8BF-288D-4409-86CB-AB37C41DD5FA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure.IoC", "Infraestructure.IoC", "{176FE1FA-A86C-49F7-AE19-544B55A995FC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoC", "IoC", "{176FE1FA-A86C-49F7-AE19-544B55A995FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitMq.Domain.Core", "Domain\MicroRabbitMq.Domain.Core\MicroRabbitMq.Domain.Core.csproj", "{4911FA26-88E0-45CC-85F5-F9703B9EBED1}"
 EndProject
