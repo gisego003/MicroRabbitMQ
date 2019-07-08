@@ -25,15 +25,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{ABBE522A-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{FA92EC29-2481-4BB6-A3FC-7C71275B8184}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitMq.Banking.App", "Microservices\Banking\Application\MicroRabbitMq.Banking.App\MicroRabbitMq.Banking.App.csproj", "{B003839C-C57C-4ECF-B05C-677EECB1DE87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitMq.Banking.App", "Microservices\Banking\Application\MicroRabbitMq.Banking.App\MicroRabbitMq.Banking.App.csproj", "{B003839C-C57C-4ECF-B05C-677EECB1DE87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitMq.Banking.Data", "Microservices\Banking\Data\MicroRabbitMq.Banking.Data\MicroRabbitMq.Banking.Data.csproj", "{B5EABBC6-AEEE-4DC5-B1EA-172548BDA6D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitMq.Banking.Data", "Microservices\Banking\Data\MicroRabbitMq.Banking.Data\MicroRabbitMq.Banking.Data.csproj", "{B5EABBC6-AEEE-4DC5-B1EA-172548BDA6D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitMq.Banking.API", "Microservices\Banking\API\MicroRabbitMq.Banking.API\MicroRabbitMq.Banking.API.csproj", "{19EB4EBC-7774-417A-BF34-0F950644FC99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitMq.Banking.API", "Microservices\Banking\API\MicroRabbitMq.Banking.API\MicroRabbitMq.Banking.API.csproj", "{19EB4EBC-7774-417A-BF34-0F950644FC99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitMq.Banking.Domain", "Microservices\Banking\Domain\MicroRabbitMq.Banking.Domain\MicroRabbitMq.Banking.Domain.csproj", "{562D6802-83E1-40ED-A4CD-41BC1715398D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitMq.Banking.Domain", "Microservices\Banking\Domain\MicroRabbitMq.Banking.Domain\MicroRabbitMq.Banking.Domain.csproj", "{562D6802-83E1-40ED-A4CD-41BC1715398D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbitMq.Domain.Core", "Domain\MicroRabbitMq.Domain.Core\MicroRabbitMq.Domain.Core.csproj", "{206CCC18-B027-4397-9830-F11027383FBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroRabbitMq.Domain.Core", "Domain\MicroRabbitMq.Domain.Core\MicroRabbitMq.Domain.Core.csproj", "{206CCC18-B027-4397-9830-F11027383FBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
