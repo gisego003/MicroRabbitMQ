@@ -2,6 +2,7 @@
 using MicroRabbitMq.Domain.Core.Bus;
 using MicroRabbitMq.Domain.Core.Commands;
 using MicroRabbitMq.Domain.Core.Events;
+using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -18,10 +19,12 @@ namespace MicroRabbitMq.Infraestructure.Bus
         private readonly IMediator mediator;
         private readonly Dictionary<string, List<Type>> handlers;
         private readonly List<Type> eventsTypes;
+        private readonly IServiceScopeFactory serviceScopeFactory;
 
-        public RabbitMqBus(IMediator mediator)
+        public RabbitMqBus(IMediator mediator, IServiceScopeFactory serviceScopeFactory)
         {
             this.mediator = mediator;
+            this.serviceScopeFactory = serviceScopeFactory;
             this.handlers = new Dictionary<string, List<Type>>();
             this.eventsTypes = new List<Type>();
         }
@@ -108,7 +111,6 @@ namespace MicroRabbitMq.Infraestructure.Bus
             }
             catch (Exception ex)
             {
-;
             }
         }
 
@@ -116,18 +118,24 @@ namespace MicroRabbitMq.Infraestructure.Bus
         {
             if (handlers.ContainsKey(eventName))
             {
-                var subscriptions = handlers[eventName];
 
-                foreach (var subscription in subscriptions)
+                using (var scope = serviceScopeFactory.CreateScope())
                 {
-                    var handler = Activator.CreateInstance(subscription);
-                    if (handler == null) continue;
+                    var subscriptions = handlers[eventName];
 
-                    var eventType = eventsTypes.SingleOrDefault(x => x.Name == eventName);
-                    var @event = JsonConvert.DeserializeObject(message, subscription);
-                    var concreteType = typeof(IEventHandler<>).MakeGenericType(eventType);
-                    await (Task) concreteType.GetMethod("Handle").Invoke(handler, new object[] { @event });
+                    foreach (var subscription in subscriptions)
+                    {
+                        //var handler = Activator.CreateInstance(subscription);
+                        var handler = scope.ServiceProvider.GetService(subscription);
+                        if (handler == null) continue;
 
+                        var eventType = eventsTypes.SingleOrDefault(x => x.Name == eventName);
+                        var @event = JsonConvert.DeserializeObject(message, eventType);
+                        var concreteType = typeof(IEventHandler<>).MakeGenericType(eventType);
+                        var method = concreteType.GetMethod("Handle");
+                        await (Task)method.Invoke(handler, new object[] { @event });
+
+                    }
                 }
             }
         }

@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EventHandlers\" />
     <Folder Include="Commands\" />
     <Folder Include="CommandHandler\" />
-    <Folder Include="Models\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Events\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Domain\MicroRabbitMq.Domain.Core\MicroRabbitMq.Domain.Core.csproj" />
   </ItemGroup>
 
 </Project>
